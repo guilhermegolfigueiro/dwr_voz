@@ -1,0 +1,22 @@
+2026-11-09 16:32:55,134 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:41:25,645 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:43:58,586 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:45:31,281 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:45:31,301 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx (DWR nº 01)
+2026-11-09 16:45:35,149 INFO Registro ACT_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx
+2026-11-09 16:47:03,276 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:54:26,822 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:57:53,684 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 16:58:09,901 INFO Registro REQ_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx
+2026-11-09 16:58:09,950 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\REQ_.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 297, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 263, in process_file
+    file_path.replace(destination)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\golle\AppData\Local\Python\pythoncore-3.15-64\Lib\pathlib\__init__.py", line 1292, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] O sistema não pode encontrar o arquivo especificado: 'C:\\Users\\Guilherme Goll\\iCloudDrive\\DWR_Entrada\\fila\\REQ_.txt' -> 'C:\\Users\\Guilherme Goll\\iCloudDrive\\DWR_Entrada\\feito\\REQ__1.txt'
+2026-11-09 17:16:22,696 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
