@@ -60,8 +60,8 @@ def reconstruir_tabela(tbl, registros):
     if tbl != tbl[:inicio] + ''.join(linhas) + '</w:tbl>':
         raise ErroDWR('estrutura inesperada dentro da tabela')
     cabecalho = linhas[0]
-    if 'Item' not in texto(cabecalho) or 'Description' not in texto(cabecalho):
-        raise ErroDWR('cabeçalho da tabela não é Item / Description')
+    if len(CELL.findall(cabecalho)) != 2:
+        raise ErroDWR('o cabeçalho da tabela de itens deveria ter 2 colunas')
 
     # Linhas de nota do base (ex.: '*Brazilian time') não são mantidas.
     corpo = [nova_linha(f'{i:02d}', t.strip()) for i, t in enumerate(registros, 1) if t.strip()]
@@ -106,24 +106,31 @@ def atualizar_numero_data(tbl0, numero, data):
     return ''.join(saida)
 
 
+GRID = re.compile(r'<w:gridCol w:w="(\d+)"')
+TCW = re.compile(r'<w:tcW w:w="(\d+)"')
+
+
+def e_tabela_de_itens(tbl):
+    """Tabela de itens = 2 colunas, a 1ª bem mais estreita que a 2ª (Item | Descrição).
+    Não depende do idioma nem do texto do cabeçalho."""
+    linhas = ROW.findall(tbl)
+    if len(linhas) < 2 or len(CELL.findall(linhas[0])) != 2:
+        return False
+    larguras = [int(w) for w in GRID.findall(tbl)] or [int(w) for w in TCW.findall(linhas[0])]
+    return len(larguras) == 2 and larguras[0] * 3 < larguras[1]
+
+
 def processar_documento(xml, numero, data, atividades, acoes):
     tabelas = TBL.findall(xml)
     if len(tabelas) != xml.count('</w:tbl>') or any('<w:tbl>' in t[8:] for t in tabelas):
         raise ErroDWR('o documento base tem tabelas aninhadas, não suportado')
-    if len(tabelas) < 6:
-        raise ErroDWR('o documento base não tem as 6 tabelas esperadas')
-    plano = texto(xml)
-    for titulo in ('LIST OF ACTIVITIES PERFORMED', 'ACTIONS / REQUESTS'):
-        if titulo not in plano:
-            raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
-
-    if 'DWR' not in texto(tabelas[0]):
-        raise ErroDWR('a primeira tabela não é a do número/data')
-    # tabelas de dados: as duas com cabeçalho Item / Description, na ordem
-    dados = [t for t in tabelas if ROW.findall(t) and
-             texto(ROW.findall(t)[0]).replace(' ', '') == 'ItemDescription']
+    if not tabelas:
+        raise ErroDWR('o documento base não tem tabelas')
+    # a 1ª tabela é a do número/data (validada em atualizar_numero_data)
+    # as tabelas de itens: as duas com 2 colunas (estreita + larga), na ordem
+    dados = [t for t in tabelas if e_tabela_de_itens(t)]
     if len(dados) != 2:
-        raise ErroDWR('não achei as duas tabelas Item / Description')
+        raise ErroDWR(f'esperava 2 tabelas de itens (coluna estreita + coluna larga), achei {len(dados)}')
 
     substituicoes = [
         (tabelas[0], atualizar_numero_data(tabelas[0], numero, data)),

@@ -20,3 +20,665 @@ Traceback (most recent call last):
     ~~~~~~~~~~^^^^^^^^^^^^^^
 FileNotFoundError: [WinError 2] O sistema não pode encontrar o arquivo especificado: 'C:\\Users\\Guilherme Goll\\iCloudDrive\\DWR_Entrada\\fila\\REQ_.txt' -> 'C:\\Users\\Guilherme Goll\\iCloudDrive\\DWR_Entrada\\feito\\REQ__1.txt'
 2026-11-09 17:16:22,696 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 17:38:00,416 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 17:52:09,087 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-09 17:52:12,993 INFO Registro ACT_-2.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx
+2026-11-09 17:52:15,418 INFO Registro ACT_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx
+2026-11-09 17:52:18,402 INFO Registro REQ_-2.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx
+2026-11-09 17:52:21,276 INFO Registro REQ_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_09-11-2026.docx
+2026-11-09 18:15:59,958 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 14:26:51,773 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 14:26:51,786 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026.docx (DWR nº 02)
+2026-11-10 14:26:55,730 INFO Registro ACT_ 2.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026.docx
+2026-11-10 14:26:58,661 INFO Registro ACT_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026.docx
+2026-11-10 14:27:01,580 INFO Registro REQ_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026.docx
+2026-11-10 14:45:29,532 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 14:45:29,535 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:45:31,565 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:45:33,573 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:45:35,581 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:45:37,589 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:45:39,596 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:45:41,602 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:47:19,652 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 14:47:19,655 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:47:21,683 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\ACT_ 2.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 297, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 257, in process_file
+    result = create_or_update_report(day, category, description)
+  File "C:\dwr_voz\dwr_voice.py", line 216, in create_or_update_report
+    path = write_report(day, state)
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:47:23,695 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\ACT_.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 297, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 257, in process_file
+    result = create_or_update_report(day, category, description)
+  File "C:\dwr_voz\dwr_voice.py", line 216, in create_or_update_report
+    path = write_report(day, state)
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:47:25,709 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\ACT__1.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 297, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 257, in process_file
+    result = create_or_update_report(day, category, description)
+  File "C:\dwr_voz\dwr_voice.py", line 216, in create_or_update_report
+    path = write_report(day, state)
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:47:45,150 INFO DWR Voice iniciado. Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 14:47:45,154 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 14:47:47,175 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 287, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 205, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 183, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 126, in processar_documento
+    raise ErroDWR('não achei as duas tabelas Item / Description')
+gerar_dwr.ErroDWR: não achei as duas tabelas Item / Description
+2026-11-10 15:18:02,485 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:18:02,497 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:05,550 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\ACT_-2.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 311, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 269, in process_file
+    result = create_or_update_report(day, category, description)
+  File "C:\dwr_voz\dwr_voice.py", line 228, in create_or_update_report
+    path = write_report(day, state)
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:08,478 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\ACT_.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 311, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 269, in process_file
+    result = create_or_update_report(day, category, description)
+  File "C:\dwr_voz\dwr_voice.py", line 228, in create_or_update_report
+    path = write_report(day, state)
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:10,494 ERROR Falha ao processar C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila\REQ_.txt
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 311, in main
+    result = process_file(file_path)
+  File "C:\dwr_voz\dwr_voice.py", line 269, in process_file
+    result = create_or_update_report(day, category, description)
+  File "C:\dwr_voz\dwr_voice.py", line 228, in create_or_update_report
+    path = write_report(day, state)
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:12,505 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:14,508 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:16,511 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:18,515 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:20,523 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:50,974 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:18:50,979 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:53,005 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:55,012 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:18:58,344 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:19:00,351 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:19:02,356 ERROR Falha ao verificar/criar o relatório do dia
+Traceback (most recent call last):
+  File "C:\dwr_voz\dwr_voice.py", line 301, in main
+    ensure_report(datetime.now(TZ).date())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 217, in ensure_report
+    write_report(day, state)
+    ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\dwr_voz\dwr_voice.py", line 195, in write_report
+    gerar_dwr.gerar(
+    ~~~~~~~~~~~~~~~^
+        base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        state["atividades"], state["acoes"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dwr_voz\gerar_dwr.py", line 143, in gerar
+    novo = processar_documento(xml, numero, data, atividades, acoes)
+  File "C:\dwr_voz\gerar_dwr.py", line 118, in processar_documento
+    raise ErroDWR(f'título "{titulo}" não encontrado no documento base')
+gerar_dwr.ErroDWR: título "LIST OF ACTIVITIES PERFORMED" não encontrado no documento base
+2026-11-10 15:21:18,832 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:21:18,850 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx (DWR nº 02)
+2026-11-10 15:23:17,420 INFO DWR Voice iniciado. Idioma=ESP | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:23:17,481 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_ESP.docx (DWR nº 02)
+2026-11-10 15:31:11,140 INFO DWR Voice iniciado. Idioma=ESP | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:31:13,179 INFO Registro ACT_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_ESP.docx
+2026-11-10 15:32:05,562 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:33:11,073 INFO DWR Voice iniciado. Idioma=ENG | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:33:11,093 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_ENG.docx (DWR nº 02)
+2026-11-10 15:45:25,112 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:45:25,135 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx (DWR nº 02)
+2026-11-10 15:45:28,414 INFO Registro ACT_ 2.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 15:45:30,469 INFO Registro ACT_-2.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 15:45:32,499 INFO Registro ACT_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 15:45:34,518 INFO Registro ACT__1.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 15:45:36,546 INFO Registro ACT__2.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 15:45:38,618 INFO Registro REQ_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 15:47:05,658 INFO DWR Voice iniciado. Idioma=ENG | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:47:05,678 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_ENG.docx (DWR nº 02)
+2026-11-10 15:48:12,012 INFO DWR Voice iniciado. Idioma=ENG | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:49:03,746 INFO DWR Voice iniciado. Idioma=ESP | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 15:49:03,765 INFO Relatório do dia criado: C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_ESP.docx (DWR nº 02)
+2026-11-10 16:21:44,910 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 16:27:10,734 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 16:27:23,564 INFO Reinício solicitado pelo teclado (R).
+2026-11-10 16:27:30,006 INFO DWR Voice iniciado. Idioma=POR | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios
+2026-11-10 16:29:38,592 INFO Registro ACT_.txt incluído em C:\Users\Guilherme Goll\OneDrive\DWR\relatorios\DWR_10-11-2026_POR.docx
+2026-11-10 16:30:22,305 INFO Reinício solicitado pelo teclado (R).
+2026-11-10 16:30:24,867 INFO DWR Voice iniciado. Idioma=ESP | Entrada=C:\Users\Guilherme Goll\iCloudDrive\DWR_Entrada\fila | Saída=C:\Users\Guilherme Goll\OneDrive\DWR\relatorios

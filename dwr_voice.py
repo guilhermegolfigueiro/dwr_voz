@@ -6,6 +6,11 @@ import time
 import logging
 import zipfile
 
+try:
+    import msvcrt  # Leitura de teclas sem bloquear o processamento (Windows)
+except ImportError:
+    msvcrt = None
+
 import gerar_dwr
 
 try:
@@ -105,8 +110,14 @@ ERRORS = INBOX_ROOT / "erros"
 EXAMPLE = INBOX_ROOT / "exemplo"
 REPORTS = ONEDRIVE_DWR / "relatorios"
 LOGS = BASE / "dwr_voice.log"
-# Formato da data escrita DENTRO do DWR (o nome do arquivo usa sempre dd-mm-aaaa).
-DATE_FORMAT = config.get("formato_data") or "%m/%d/%Y"
+# Idiomas: letra -> (sufixo do arquivo, nomes aceitos para o documento base, data dentro do DWR)
+# "formato_data" no config.json, se existir, vale para todos os idiomas.
+LANGUAGES = {
+    "i": ("ENG", ["base_eng.docx", "base.docx"], "%m/%d/%Y"),
+    "p": ("POR", ["base_por.docx"], "%d/%m/%Y"),
+    "e": ("ESP", ["base_esp.docx"], "%d/%m/%Y"),
+}
+LANG = None   # definido ao abrir o programa (ver choose_language)
 
 for folder in (INBOX, DONE, ERRORS, EXAMPLE, REPORTS):
     folder.mkdir(parents=True, exist_ok=True)
@@ -121,25 +132,31 @@ logging.basicConfig(
 
 def report_path(day):
     # Windows não permite barras em nomes de arquivos.
-    return REPORTS / f"DWR_{day.strftime('%d-%m-%Y')}.docx"
+    return REPORTS / f"DWR_{day.strftime('%d-%m-%Y')}_{LANGUAGES[LANG][0]}.docx"
 
 
 # ---------------------------------------------------------------- documento base
 
+def choose_language():
+    """Pergunta o idioma do relatório ao abrir o programa."""
+    global LANG
+    while True:
+        answer = input("Idioma do relatório [i = inglês, p = português, e = espanhol]: ").strip().lower()
+        if answer in LANGUAGES:
+            LANG = answer
+            return
+        print("Digite i, p ou e.")
+
+
 def find_base():
-    """Documento base do serviço: exemplo/base.docx (ou o único .docx da pasta)."""
-    preferred = EXAMPLE / "base.docx"
-    if preferred.exists():
-        return preferred
-    docs = sorted(p for p in EXAMPLE.glob("*.docx") if not p.name.startswith("~$"))
-    if len(docs) == 1:
-        return docs[0]
-    if not docs:
-        raise AguardandoBase(
-            f"Coloque o DWR base do serviço (cabeçalho + tabelas + assinaturas) em: {EXAMPLE}"
-        )
+    """Documento base do idioma escolhido, na pasta exemplo."""
+    suffix, names, _ = LANGUAGES[LANG]
+    for name in names:
+        candidate = EXAMPLE / name
+        if candidate.exists():
+            return candidate
     raise AguardandoBase(
-        f"Há mais de um .docx em {EXAMPLE}. Deixe só um, ou chame-o de base.docx."
+        f"Coloque o documento base {names[0]} (cabeçalho + tabelas + assinaturas) em: {EXAMPLE}"
     )
 
 
@@ -181,7 +198,7 @@ def write_report(day, state):
     tmp = path.with_name(path.name + ".tmp")
     try:
         gerar_dwr.gerar(
-            base, tmp, state["numero"], day.strftime(DATE_FORMAT),
+            base, tmp, state["numero"], day.strftime(config.get("formato_data") or LANGUAGES[LANG][2]),
             state["atividades"], state["acoes"],
         )
         os.replace(tmp, path)
@@ -265,13 +282,34 @@ def process_file(file_path):
     return result
 
 
+def wait_for_restart_key():
+    """Aguarda 2 segundos, verificando se R foi pressionado no Windows."""
+    if msvcrt is None:
+        time.sleep(2)
+        return False
+
+    for _ in range(20):
+        if msvcrt.kbhit():
+            key = msvcrt.getwch()
+            if key.lower() == "r":
+                print("\nTecla R pressionada. Reiniciando o DWR Voice...\n")
+                logging.info("Reinício solicitado pelo teclado (R).")
+                return True
+        time.sleep(0.1)
+
+    return False
+
+
 def main():
+    choose_language()
+    print(f"Idioma: {LANGUAGES[LANG][0]}")
     print("DWR Voice ativo.")
+    print("Pressione R a qualquer momento para reiniciar o sistema.")
     print(f"Entrada iCloud: {INBOX}")
-    print(f"Documento base: {EXAMPLE}")
+    print(f"Documento base: {EXAMPLE / LANGUAGES[LANG][1][0]}")
     print(f"Relatórios OneDrive: {REPORTS}")
     print("ACT_*.txt = atividades | REQ_*.txt = ações/solicitações")
-    logging.info("DWR Voice iniciado. Entrada=%s | Saída=%s", INBOX, REPORTS)
+    logging.info("DWR Voice iniciado. Idioma=%s | Entrada=%s | Saída=%s", LANGUAGES[LANG][0], INBOX, REPORTS)
 
     last_warning = None
 
@@ -311,12 +349,14 @@ def main():
                 except Exception:
                     pass
                 print(f"ERRO em {file_path.name}: {exc}")
-        time.sleep(2)
+        if wait_for_restart_key():
+            return True
 
 
 if __name__ == "__main__":
     try:
-        main()
+        while True:
+            main()
     except Exception as exc:
         print(f"Não foi possível iniciar o DWR Voice: {exc}")
         print("Confira config.json e os caminhos do iCloud Drive e OneDrive.")
